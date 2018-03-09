@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home.component';
 import { ErrorComponent } from './components/error.component';
+import { ProductosListComponent } from './components/productos-list.component';
 
 
 //Rutas
@@ -15,7 +16,8 @@ import { routing, appRoutingProviders } from './app.routing';
   declarations: [
     AppComponent,
     HomeComponent,
-    ErrorComponent
+    ErrorComponent,
+    ProductosListComponent
   ],
   imports: [
     BrowserModule,
