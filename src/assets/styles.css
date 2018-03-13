@@ -85,3 +85,11 @@ margin:0px;
 	border-radius: 20px;
 
 }
+
+
+.activado{
+
+	text-decoration: none!important;
+	border-bottom: :4px solid yellow !important;
+
+}

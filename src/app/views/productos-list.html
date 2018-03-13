@@ -1,3 +1,22 @@
-<h3>{{titulo}}</h3>
+<h3 style="
+    margin-top: 50px;
+">{{titulo}}</h3>
 
-<hr>
+<hr/>
+
+
+<div *ngIf="!productos">
+	Cargando Productos
+</div>
+
+
+<div *ngIf="productos">
+	<ul>
+		<li *ngFor="let producto of productos">
+			<strong>{{producto.nombre}}</strong>
+			<strong>{{producto.precio}}</strong>
+		</li>
+
+	</ul>
+
+</div>

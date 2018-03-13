@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
+import { ProductoService } from '../services/producto.service';
+import { Producto } from '../models/producto';
 
 @Component({
 
     selector: 'productos-list',
-    templateUrl:'../views/productos-list.html'
+    templateUrl:'../views/productos-list.html',
+    providers:[ProductoService]
 
 	})
 
@@ -12,10 +15,12 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 export class ProductosListComponent{
 
     public titulo: string;
+    public productos: Producto[];
 
     constructor(
           private _route: ActivatedRoute,
-          private _router: Router
+          private _router: Router,
+          private _productoService:ProductoService
     	){
         this.titulo ='Listado de productos';
 
@@ -23,6 +28,27 @@ export class ProductosListComponent{
 
     ngOnInit(){
     	console.log('Porductos-list cargado');
+        this._productoService.getProductos().subscribe(
+
+            result =>{
+                  
+              
+
+              if(result.code!=200){
+                console.log(result.code);
+              }else{
+                console.log(result);
+                this.productos = result.message;
+              }
+            },
+            error => {
+
+                console.log(<any>error);
+
+            }
+
+
+            );
     }
 
 }

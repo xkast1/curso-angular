@@ -7,6 +7,8 @@ import { HomeComponent } from './components/home.component';
 import { ErrorComponent } from './components/error.component';
 import { ProductosListComponent } from './components/productos-list.component';
 
+import { HttpModule } from '@angular/http';
+
 
 //Rutas
 import { routing, appRoutingProviders } from './app.routing';
@@ -21,7 +23,8 @@ import { routing, appRoutingProviders } from './app.routing';
   ],
   imports: [
     BrowserModule,
-    routing
+    routing,
+    HttpModule
   ],
   providers: [
 
