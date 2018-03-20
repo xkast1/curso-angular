@@ -28,11 +28,15 @@ export class ProductosListComponent{
 
     ngOnInit(){
     	console.log('Porductos-list cargado');
-        this._productoService.getProductos().subscribe(
+      this.getProducto();
+        
+    }
 
-            result =>{
-                  
-              
+    getProducto(){
+
+      this._productoService.getProductos().subscribe(
+
+            result => {
 
               if(result.code!=200){
                 console.log(result.code);
@@ -45,10 +49,33 @@ export class ProductosListComponent{
 
                 console.log(<any>error);
 
-            }
+            });
 
 
-            );
+    }
+
+
+    onDeleteProducto(id){
+      this._productoService.deleteProducto(id).subscribe(
+
+            response=>{
+                
+                 if(response.code == 200){
+                    this.getProducto();
+
+                 }else{
+
+                  console.log("Error al borrar el producto");
+                 }
+
+              },
+              error =>{
+
+                console.log(<any>error);
+
+              }
+
+        );
     }
 
 }

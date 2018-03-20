@@ -10,6 +10,7 @@ import { ErrorComponent } from './components/error.component';
 import { ProductosListComponent } from './components/productos-list.component';
 import { ProductoAddComponent } from './components/producto-add.component';
 import { ProductoDetailComponent } from './components/producto-detail.component';
+import { ProductoEditComponent } from './components/producto-edit.component';
 
 import { HttpModule } from '@angular/http';
 
@@ -27,7 +28,8 @@ import { routing, appRoutingProviders } from './app.routing';
     ErrorComponent,
     ProductosListComponent,
     ProductoAddComponent,
-    ProductoDetailComponent
+    ProductoDetailComponent,
+    ProductoEditComponent
   ],
   imports: [
     BrowserModule,

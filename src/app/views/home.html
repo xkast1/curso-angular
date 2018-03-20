@@ -7,8 +7,8 @@
           <h2>{{titulo}}</h2>
           <p>Gestiona tus productos con la aplicacion web SPA creada con angular</p>
           <p>
-          	<a href="#" class="btn btn-lg btn-primary">Ver Productos</a>
-          	<a href="#" class="btn btn-lg btn-success">Añadir Productos</a>
+          	<a [routerLink]="['/productos']" class="btn btn-lg btn-primary">Ver Productos</a>
+          	<a [routerLink]="['/crear-producto']"  class="btn btn-lg btn-success">Añadir Productos</a>
 
           </p>
 

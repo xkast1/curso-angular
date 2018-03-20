@@ -74,4 +74,19 @@ export class ProductoService{
 
     }
 
+
+    editProducto(id, producto: Producto){
+        let json = JSON.stringify(producto);
+        let params = "json="+json;
+        let headers= new Headers({'Content-Type':'application/x-www-form-urlencoded'});
+
+        return this._http.post(this.url+'update-producto/'+id,params,{headers:headers}).map(res=>res.json());
+    }
+
+
+    deleteProducto(id){
+        return this._http.get(this.url+'delete-producto/'+id).map(res => res.json());
+    }
+
+
 }
