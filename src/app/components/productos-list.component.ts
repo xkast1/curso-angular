@@ -16,6 +16,7 @@ export class ProductosListComponent{
 
     public titulo: string;
     public productos: Producto[];
+       public confirmado;
 
     constructor(
           private _route: ActivatedRoute,
@@ -23,6 +24,7 @@ export class ProductosListComponent{
           private _productoService:ProductoService
     	){
         this.titulo ='Listado de productos';
+        this.confirmado=null;
 
     }
 
@@ -52,6 +54,16 @@ export class ProductosListComponent{
             });
 
 
+    }
+
+ 
+
+    borrarConfirm(id){
+      this.confirmado=id;
+    }
+
+    cancelarConfirm(){
+      this.confirmado=null;
     }
 
 
